@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena Gol - Acompanhe a Copa</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app-container">
+        
+        <section class="brand-panel">
+            <div class="brand-content">
+                <div class="logo">ARENA<span>GOL</span></div>
+                <div class="hero-text">
+                    <h1>A Copa do Mundo jogada em tempo real com você.</h1>
+                    <p>Estatísticas avançadas, alertas de gols instantâneos e uma comunidade vibrante. Entre na maior arena digital de futebol do planeta.</p>
+                </div>
+            </div>
+            <div class="brand-footer">
+                <p>© 2026 Arena Gol. Todos os direitos reservados.</p>
+            </div>
+        </section>
+
+        <section class="auth-panel">
+            <div class="auth-box">
+                
+                <div id="login-section" class="auth-card">
+                    <header class="form-header">
+                        <h2>Acesse sua conta</h2>
+                        <p>Bem-vindo de volta! Digite suas credenciais.</p>
+                    </header>
+
+                    <form id="login-form" autocomplete="off">
+                        <div class="input-group">
+                            <label for="login-email">E-mail corporativo ou usuário</label>
+                            <input type="email" id="login-email" placeholder="exemplo@arenagol.com" autofocus required>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="label-wrapper">
+                                <label for="login-password">Senha</label>
+                                <button type="button" class="ghost-link">Esqueci minha senha</button>
+                            </div>
+                            <div class="password-wrapper">
+                                <input type="password" id="login-password" required>
+                                <button type="button" class="toggle-password" aria-label="Alternar visibilidade da senha">
+                                    <i data-lucide="eye"></i>
+                                </button>
+                            </div>
+                            <span class="helper-text">Mínimo de 8 caracteres, contendo números e letras.</span>
+                        </div>
+
+                        <div class="form-actions-row">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="remember-me">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Manter conectado</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="btn-login-submit" disabled>
+                            <span class="btn-text">Entrar na Arena</span>
+                            <div class="spinner hidden"></div>
+                        </button>
+
+                        <div class="divider">
+                            <span>ou entrar com</span>
+                        </div>
+
+                        <div class="social-group">
+                            <button type="button" class="btn-social">
+                                <i data-lucide="google"></i> Google
+                            </button>
+                            <button type="button" class="btn-social">
+                                <i data-lucide="apple"></i> Apple
+                            </button>
+                        </div>
+                    </form>
+
+                    <footer class="card-footer">
+                        <p>Ainda não tem conta? <button type="button" class="toggle-auth-mode" onclick="switchMode('register')">Criar Conta</button></p>
+                    </footer>
+                </div>
+
+                <div id="register-section" class="auth-card hidden">
+                    <header class="form-header">
+                        <h2>Criar nova conta</h2>
+                        <p>Preencha os dados abaixo e comece a acompanhar.</p>
+                    </header>
+
+                    <form id="register-form" autocomplete="off">
+                        <div class="input-group">
+                            <label for="reg-name">Nome Completo</label>
+                            <input type="text" id="reg-name" placeholder="Maria da Silva" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="reg-email">E-mail</label>
+                            <input type="email" id="reg-email" placeholder="seu@email.com" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="reg-password">Senha</label>
+                            <div class="password-wrapper">
+                                <input type="password" id="reg-password" required>
+                                <button type="button" class="toggle-password" aria-label="Alternar visibilidade da senha">
+                                    <i data-lucide="eye"></i>
+                                </button>
+                            </div>
+                            <span class="helper-text">Mínimo de 8 caracteres, contendo números e letras.</span>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="reg-password-confirm">Confirmação de Senha</label>
+                            <div class="password-wrapper">
+                                <input type="password" id="reg-password-confirm" required>
+                                <button type="button" class="toggle-password" aria-label="Alternar visibilidade da senha">
+                                    <i data-lucide="eye"></i>
+                                </button>
+                            </div>
+                            <span class="error-text hidden" id="password-match-error">As senhas não coincidem.</span>
+                        </div>
+
+                        <div class="form-actions-row">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="terms-agree" required>
+                                <span class="checkmark"></span>
+                                <span class="label-text">Eu concordo com os <a href="#" class="inline-link">Termos de Uso</a></span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="btn-register-submit" disabled>
+                            <span class="btn-text">Criar Conta</span>
+                        </button>
+
+                        <div class="divider">
+                            <span>ou cadastrar com</span>
+                        </div>
+
+                        <div class="social-group">
+                            <button type="button" class="btn-social">
+                                <i data-lucide="google"></i> Google
+                            </button>
+                            <button type="button" class="btn-social">
+                                <i data-lucide="github"></i> GitHub
+                            </button>
+                        </div>
+                    </form>
+
+                    <footer class="card-footer">
+                        <p>Já possui uma conta? <button type="button" class="toggle-auth-mode" onclick="switchMode('login')">Fazer Login</button></p>
+                    </footer>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
