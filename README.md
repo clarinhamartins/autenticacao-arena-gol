@@ -14,6 +14,7 @@ Este repositório contém o código da interface de Login e Cadastro da platafor
 ---
 
 ## Requisitos Implementados no Sistema
+ Este projeto compreende exclusivamente o desenvolvimento do fluxo visual e lógico das telas de Login e Cadastro. O sistema realiza as validações de dados locais, simula o estado de carregamento e exibe alertas de sucesso ao submeter os formulários, porém não realiza a integração com banco de dados e não redireciona para uma plataforma interna. Trata-se estritamente da interface de autenticação (Frontend).
 
 ### 1. Painel de Login
 * **Foco Automático:** O campo de e-mail recebe o cursor assim que a página é carregada através do atributo nativo de foco.
