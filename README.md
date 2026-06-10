@@ -1,6 +1,6 @@
 # Arena Gol — Tela de Autenticação
 
-Este repositório contém o código da interface de Login e Cadastro da plataforma Arena Gol, desenvolvida para o acompanhamento da Copa do Mundo 2026. O projeto foi construído utilizando tecnologias nativas (HTML, CSS e JavaScript puros), com foco no cumprimento dos requisitos de usabilidade, validação de dados e tratamento de eventos.
+Este repositório contém o código da interface de Login e Cadastro da plataforma Arena Gol, desenvolvida para o acompanhamento da Copa do Mundo 2026. O projeto foi construído utilizando tecnologias nativas (HTML, CSS e JavaScript), com foco no cumprimento dos requisitos de usabilidade, validação de dados e tratamento de eventos.
 
 ---
 
@@ -14,7 +14,8 @@ Este repositório contém o código da interface de Login e Cadastro da platafor
 ---
 
 ## Requisitos Implementados no Sistema
- Este projeto compreende exclusivamente o desenvolvimento do fluxo visual e lógico das telas de Login e Cadastro. O sistema realiza as validações de dados locais, simula o estado de carregamento e exibe alertas de sucesso ao submeter os formulários, porém não realiza a integração com banco de dados e não redireciona para uma plataforma interna. Trata-se estritamente da interface de autenticação (Frontend).
+
+Este projeto compreende exclusivamente o desenvolvimento do fluxo visual e lógico das telas de Login e Cadastro. O sistema realiza as validações de dados locais, simula o estado de carregamento e exibe alertas de sucesso ao submeter os formulários, porém não realiza a integração com banco de dados e não redireciona para uma plataforma interna. Trata-se estritamente da interface de autenticação (Frontend).
 
 ### 1. Painel de Login
 * **Foco Automático:** O campo de e-mail recebe o cursor assim que a página é carregada através do atributo nativo de foco.
@@ -24,7 +25,7 @@ Este repositório contém o código da interface de Login e Cadastro da platafor
 * **Botão de Envio:** O botão possui o maior destaque visual da página através da cor verde de destaque.
 * **Indicador de Carregamento:** Ao clicar em entrar, o sistema simula uma requisição mudando o texto do botão e exibindo um ícone animado de carregamento.
 * **Link de Recuperação:** O link para redefinição de senha foi posicionado de forma discreta ao lado da identificação do campo.
-* **Acesso Social:** Opções para autenticação via Google e Apple integradas em um bloco separado por uma linha divisória.
+* **Acesso Social:** Opções para autenticação via Google e GitHub integradas em um bloco separado por uma linha divisória.
 
 ### 2. Painel de Cadastro
 * **Nome Completo:** Campo de texto com orientação clara de preenchimento.
@@ -47,6 +48,7 @@ Este repositório contém o código da interface de Login e Cadastro da platafor
 * `index.html`: Código de estrutura dos formulários e elementos textuais.
 * `style.css`: Configuração visual, espaçamentos e regras de responsividade.
 * `script.js`: Toda a lógica de comportamento, validações e escuta de eventos.
+* `README.md`: Documentação do projeto
 
 ---
 

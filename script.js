@@ -36,12 +36,12 @@ function hasLettersAndNumbers(string) {
 }
 
 /* ==========================================================================
-   MICRO-INTERAÇÃO: TOGGLE DE VISIBILIDADE DA SENHA (CORRIGIDO)
+   MICRO-INTERAÇÃO: TOGGLE DE VISIBILIDADE DA SENHA
    ========================================================================== */
 document.querySelectorAll('.toggle-password').forEach(button => {
     button.addEventListener('click', function() {
         const passwordInput = this.closest('.password-wrapper').querySelector('input');
-        const icon = this.querySelector('i') || this.querySelector('svg');
+        const icon = this.querySelector('i, svg');
         
         if (!passwordInput || !icon) return;
         
@@ -69,11 +69,7 @@ function validateLoginForm() {
 
     loginEmail.style.borderColor = (emailValue.length > 5 && !emailCheck) ? "#FF4D4D" : "";
 
-    if (emailCheck && passwordCheck) {
-        btnLoginSubmit.removeAttribute('disabled');
-    } else {
-        btnLoginSubmit.setAttribute('disabled', 'true');
-    }
+    btnLoginSubmit.disabled = !(emailCheck && passwordCheck);
 }
 
 ['input', 'change'].forEach(eventType => {
@@ -102,29 +98,21 @@ function validateRegisterForm() {
         passwordMatchError.classList.add('hidden');
     }
 
-    if (isNameValid && emailCheck && isPasswordValid && passwordsMatch && isTermsChecked) {
-        btnRegisterSubmit.removeAttribute('disabled');
-    } else {
-        btnRegisterSubmit.setAttribute('disabled', 'true');
-    }
+    btnRegisterSubmit.disabled = !(isNameValid && emailCheck && isPasswordValid && passwordsMatch && isTermsChecked);
 }
 
 ['input', 'change'].forEach(eventType => {
-    [regName, regEmail, regPassword, regPasswordConfirm].forEach(element => {
+    [regName, regEmail, regPassword, regPasswordConfirm, termsAgree].forEach(element => {
         element.addEventListener(eventType, validateRegisterForm);
     });
 });
-
-termsAgree.addEventListener('change', validateRegisterForm);
 
 /* ==========================================================================
    NAVEGAÇÃO ALTERNATIVA
    ========================================================================== */
 function switchMode(mode) {
-    document.querySelectorAll('input').forEach(input => {
-        if (input.id.includes('password')) {
-            input.type = 'password';
-        }
+    document.querySelectorAll('input[type="text"]').forEach(input => {
+        if (input.id.includes('password')) input.type = 'password';
     });
 
     document.querySelectorAll('.toggle-password i, .toggle-password svg').forEach(icon => {
@@ -152,13 +140,13 @@ loginForm.addEventListener('submit', function(e) {
     const btnText = btnLoginSubmit.querySelector('.btn-text');
     const spinner = btnLoginSubmit.querySelector('.spinner');
 
-    btnLoginSubmit.setAttribute('disabled', 'true');
+    btnLoginSubmit.disabled = true;
     btnText.textContent = 'Conectando à Arena...';
     spinner.classList.remove('hidden');
 
     setTimeout(() => {
         alert('Acesso autorizado! Bem-vindo à Arena Gol.');
-        btnLoginSubmit.removeAttribute('disabled');
+        btnLoginSubmit.disabled = false;
         btnText.textContent = 'Entrar na Arena';
         spinner.classList.add('hidden');
     }, 2000);

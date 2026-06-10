@@ -154,6 +154,7 @@ input:focus {
     position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .password-wrapper input {
@@ -236,7 +237,7 @@ input:focus {
     border-color: var(--text-muted);
 }
 
-/* LINKS DE ALTERNÂNCIA E LINKS GHOST */
+/* LINKS DE ALTERNÂNCIA */
 .ghost-link, .toggle-auth-mode {
     background: none;
     border: none;
@@ -247,7 +248,7 @@ input:focus {
     transition: var(--transition);
 }
 
-.ghost-link:hover, .toggle-auth-mode:hover {
+.ghost-link:hover, .toggle-auth-mode:hover, .inline-link:hover {
     color: var(--brand-hover);
     text-decoration: underline;
 }
@@ -256,11 +257,6 @@ input:focus {
     color: var(--brand-primary);
     text-decoration: none;
     transition: var(--transition);
-}
-
-.inline-link:hover {
-    color: var(--brand-hover);
-    text-decoration: underline;
 }
 
 .helper-text, .error-text {
